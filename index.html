@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Brew Quick Check</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Brew Quick Check</h1>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Paramètres</h2>
+      <label>Volume final (L)
+        <input id="volFinal" type="number" step="0.1" value="20">
+      </label>
+      <label>Volume pré-ébullition (L) <span class="muted">(optionnel)</span>
+        <input id="volPreboil" type="number" step="0.1" placeholder="ex: 27">
+      </label>
+      <label>Efficacité BIAB (%)
+        <input id="eff" type="number" step="1" value="72">
+      </label>
+      <label>Atténuation levure (%) <span class="muted">(pour FG/ABV)</span>
+        <input id="att" type="number" step="1" value="75">
+      </label>
+    </section>
+
+    <section class="card">
+      <h2>Fermentables</h2>
+      <div id="fermentables"></div>
+      <button id="addFermentable">+ Ajouter</button>
+      <p class="muted">PPG typiques: Pale ~37, Pils ~37, Munich ~35, Wheat ~38, Crystal ~34, Sugar ~46.</p>
+    </section>
+
+    <section class="card">
+      <h2>Houblons</h2>
+      <div id="hops"></div>
+      <button id="addHop">+ Ajouter</button>
+    </section>
+
+    <section class="card results">
+      <h2>Résultats</h2>
+      <div class="grid">
+        <div><strong>OG</strong><div id="outOG">—</div></div>
+        <div><strong>IBU</strong><div id="outIBU">—</div></div>
+        <div><strong>FG est.</strong><div id="outFG">—</div></div>
+        <div><strong>ABV</strong><div id="outABV">—</div></div>
+      </div>
+      <button id="save">Sauver recette</button>
+      <button id="load">Charger dernière</button>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js');
+  </script>
+</body>
+</html>
