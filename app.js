@@ -116,9 +116,9 @@ function getRecipeFromUI() {
 }
 
 function setUIFromRecipe(rcp) {
-  document.getElementById("volFinal").value = rcp.volFinal ?? 20;
+  document.getElementById("volFinal").value = rcp.volFinal ?? 18.9;
   document.getElementById("volPreboil").value = Number.isFinite(rcp.volPreboil) ? rcp.volPreboil : "";
-  document.getElementById("eff").value = rcp.eff ?? 72;
+  document.getElementById("eff").value = rcp.eff ?? 65;
   document.getElementById("att").value = rcp.att ?? 75;
 
   const fBox = document.getElementById("fermentables");
@@ -130,7 +130,7 @@ function setUIFromRecipe(rcp) {
   (rcp.hops ?? []).forEach(h => hBox.appendChild(hopRow(h)));
 
   if (fBox.children.length === 0) fBox.appendChild(fermentableRow({name:"Pale", kg:4.5, ppg:37}));
-  if (hBox.children.length === 0) hBox.appendChild(hopRow({name:"Cascade", g:25, aa:0.06, timeMin:60}));
+  if (hBox.children.length === 0) hBox.appendChild(hopRow({name:"Cascade", g:28, aa:0.06, timeMin:60}));
 
   recalc();
 }
@@ -184,9 +184,9 @@ document.getElementById("load").onclick = loadRecipe;
 loadRecipe();
 if (!localStorage.getItem(KEY)) {
   setUIFromRecipe({
-    volFinal: 20,
+    volFinal: 18.9,
     volPreboil: 27,
-    eff: 72,
+    eff: 65,
     att: 75,
     fermentables: [{name:"Pale", kg:4.5, ppg:37}],
     hops: [{name:"Cascade", g:25, aa:0.06, timeMin:60}]
