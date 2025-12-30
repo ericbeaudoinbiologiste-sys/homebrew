@@ -1,6 +1,6 @@
 {
   "name": "Brew Quick Check",
-  "short_name": "BrewCheck",
+  "short_name": "B2",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#111827",
