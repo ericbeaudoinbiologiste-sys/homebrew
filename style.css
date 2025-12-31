@@ -13,19 +13,19 @@ button:hover { filter: brightness(0.95); }
 .muted { color:#6b7280; font-size: 0.9em; }
 .results .grid { display:grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
 @media (max-width: 720px) { .results .grid { grid-template-columns: repeat(2, 1fr); } }
-.row.header {
-  margin-top: 6px;
-  margin-bottom: 6px;
-  font-weight: 700;
-  color: #374151;
-}
-
+/* Alignement précis des titres avec les inputs */
 .row.header > div {
-  padding: 0 2px;
+  padding: 10px;            /* même padding que input */
+  border: 1px solid transparent;
+  box-sizing: border-box;
 }
 
-.row.header div:last-child {
-  /* colonne du bouton ✕ */
-  text-align: right;
+/* Pour aligner le texte comme dans les champs */
+.row.header > div:not(:last-child) {
+  text-align: left;
 }
 
+/* Colonne du bouton ✕ */
+.row.header > div:last-child {
+  padding: 10px 0;
+}
