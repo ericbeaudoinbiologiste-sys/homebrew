@@ -13,3 +13,19 @@ button:hover { filter: brightness(0.95); }
 .muted { color:#6b7280; font-size: 0.9em; }
 .results .grid { display:grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
 @media (max-width: 720px) { .results .grid { grid-template-columns: repeat(2, 1fr); } }
+.row.header {
+  margin-top: 6px;
+  margin-bottom: 6px;
+  font-weight: 700;
+  color: #374151;
+}
+
+.row.header > div {
+  padding: 0 2px;
+}
+
+.row.header div:last-child {
+  /* colonne du bouton ✕ */
+  text-align: right;
+}
+
